@@ -1,0 +1,23 @@
+.trafficlight {
+  background: #222;
+  background-image: linear-gradient(transparent 2%, #111 2%, transparent 3%, #111 30%);
+  width: 110px;
+  min-height: 100px;
+  border-radius: 10px;
+  display: grid;
+  border: solid 5px #333;
+  margin-bottom: 50px;
+}
+
+.lights {
+  display: grid;
+  grid-auto-rows: 1fr 1fr 1fr;
+
+}
+
+.ampoul {
+  height: 50px;
+  border-radius: 20px;
+  width: 100px;
+  margin: 5px;
+}

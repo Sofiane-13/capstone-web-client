@@ -1,0 +1,67 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="body">
+
+  <div class="header">
+    <h1 class="title">Capston Client</h1>
+  </div>
+  <div class="content">
+    <div class="streetID">
+      MAC ID : {{streetId}}
+    </div>
+    <div class="actualiser">
+
+    </div>
+    <div class="date">
+      Date : {{date}}
+    </div>
+    <div class="tlN" *ngIf="nord">
+      <app-trafic-light [couleur]="nord"></app-trafic-light>
+
+    </div>
+    <div class="tlS" *ngIf="sud">
+      <app-trafic-light [couleur]="sud"></app-trafic-light>
+    </div>
+    <div class="tlE" *ngIf="est">
+      <app-trafic-light [couleur]="est"></app-trafic-light>
+
+    </div>
+    <div class="tlO" *ngIf="oest">
+      <app-trafic-light [couleur]="oest"></app-trafic-light>
+    </div>
+    <div class="rondPoint">
+
+    </div>
+  </div>
+  <H1 class="historiqueTitle">
+    Historique :
+  </H1>
+  <div class="matable">
+  <table class="table">
+      <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Nord</th>
+            <th scope="col">Sud</th>
+            <th scope="col">est</th>
+            <th scope="col">ouest</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+      <tr *ngFor="let street of streets |  paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+        <td> {{street.date}} </td>
+        <td> {{street.north}} </td>
+        <td> {{street.sud}}</td>
+        <td> {{street.est}} </td>
+        <td> {{street.ouest}} </td>
+
+      </tr>
+      </tbody>
+      </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
