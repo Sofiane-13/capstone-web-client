@@ -22,9 +22,10 @@ export class GetStatesStreetService {
    }
 
     getAuthors() {
-    const autorisation = btoa('TBNAbV+B04e543jA9ByvUluen7R10dtf' + ":" + '');
-    console.log(autorisation);
+    // const autorisation = btoa('TBNAbV+B04e543jA9ByvUluen7R10dtf' + ":" + '');
+    // console.log(autorisation);
     const headers =  {headers: new  HttpHeaders().set('Authorization', 'Basic VEJOQWJWK0IwNGU1NDNqQTlCeXZVbHVlbjdSMTBkdGY6')};
+
 
     return this.http.get('http://localhost:8080/api/street/', headers);
     }
